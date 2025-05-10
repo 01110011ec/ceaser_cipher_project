@@ -55,7 +55,34 @@ switch(emblemClue3){
         loc+="West";
         break;
 }
-console.log(loc);
+console.log(loc);//debugging 
+
+/*****--------------------------Technical exersize 2.5-----------------------------------------------*****/
+const guests = ["ANTONY", "CLEOPATRA", "CASSIUS", "CICERO"];
+let isThereSpartacus = "SPARTACUS";
+guests.splice(0,0,"BRUTUS");
+console.log(guests); //answer to question 1, prints out array to double check brutus was added 
+
+//question 2, used mdn docs for refresher on methods 
+console.log(guests.indexOf(isThereSpartacus)); //question2- returns -1 if item doesn't exist, or an integer if the item exists. should return -1
+
+//step 4
+let cassius = guests.indexOf("CASSIUS");
+guests.splice(cassius,1); //remove cassius from the array at the specific index
+console.log(guests);
+
+//step 5
+let specialGuests = guests.slice(0,3);
+console.log(specialGuests);
+
+//step 6
+let honoredGuest = guests.slice(0,1);
+let plebians = guests.slice(1);
+plebians.sort();
+let sortedGuests = honoredGuest.concat(plebians);
+console.log("sorted guests: "+ sortedGuests);
+console.log("original guests: "+ guests);
+
 
 //finds the position
 function findNewLetter(alphabet, shiftVal, value){
